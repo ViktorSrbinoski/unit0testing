@@ -23,12 +23,14 @@ public class TimePeriod {
         }
         // testBinteractA()
         if ((this.start.after(period.start))
-            && (this.end.after(period.end))) {
+            && (this.start.before(period.end))
+            && (this.end.after(period.end)) ) {
             return true;
         }
         // testAinteractB()
         if ((this.start.before(period.start))
-            && (this.end.before(period.end))) {
+            && (this.end.before(period.end))
+            && (this.end.after(period.start))) {
             return true;
         }
         // testAequalsB()
